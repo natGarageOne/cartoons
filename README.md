@@ -6,3 +6,5 @@
 # el use case es consumido  en el viewmodel el cual administra la memoria y hace el procesado de mandar a la vista la informacion necesaria 
 # la vista es renderizada en compose 
 # se conserva el principio de Patron SOLID para delegar responsabilidades entre las capas de MVVM 
+
+# link https://github.com/natGarageOne/cartoons/pull/1#issue-2852750116
