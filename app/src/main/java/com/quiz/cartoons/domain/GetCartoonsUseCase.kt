@@ -13,7 +13,7 @@ import javax.inject.Inject
 class GetCartoonsUseCase @Inject constructor(
     private val cartoonsRepository: CartoonsRepository
 ) {
-    suspend operator fun invoke(context: Context): Flow<DataState<CartoonsResponse>>{
+    suspend operator fun invoke(): Flow<DataState<CartoonsResponse>>{
        return cartoonsRepository.getPersons().catch { e ->
            emit(DataState.Error("error en la peticion"))
        }.flowOn(Dispatchers.IO)

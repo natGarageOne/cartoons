@@ -21,9 +21,9 @@ class CartoonsViewModel @Inject constructor(
     private val _cartoons = MutableStateFlow(CartoonsResponse())
     val cartoons: StateFlow<CartoonsResponse> get() = _cartoons
 
-    fun getInitials(context: Context){
+    fun getInitials(){
         viewModelScope.launch {
-            getCartoonsUseCase.invoke(context).collect{ response ->
+            getCartoonsUseCase.invoke().collect{ response ->
                 when(response){
                     is DataState.Success -> {
                         _cartoons.value = response.data

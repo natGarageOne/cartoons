@@ -34,7 +34,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -57,7 +56,7 @@ import kotlinx.coroutines.launch
 fun CartoonScreen(
     cartoonsViewModel: CartoonsViewModel
 ) {
-    val context = LocalContext.current
+
     var showModal by remember { mutableStateOf(false) }
     var selectedPerson by remember { mutableStateOf<Person?>(null) }
     val cartoons by cartoonsViewModel.cartoons.collectAsState()
@@ -67,14 +66,14 @@ fun CartoonScreen(
     val onRefresh: () -> Unit = {
         isRefreshing = true
         coroutineScope.launch {
-            cartoonsViewModel.getInitials(context)
+            cartoonsViewModel.getInitials()
             composition?.duration.let {
                 kotlinx.coroutines.delay(composition!!.duration.toLong())
             }
             isRefreshing = false
         }
     }
-    cartoonsViewModel.getInitials(context)
+    cartoonsViewModel.getInitials()
 
 
     Box(
