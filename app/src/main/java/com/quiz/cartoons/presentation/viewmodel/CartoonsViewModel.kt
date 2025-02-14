@@ -1,6 +1,7 @@
 package com.quiz.cartoons.presentation.viewmodel
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.quiz.cartoons.data.CartoonsResponse
@@ -28,6 +29,7 @@ class CartoonsViewModel @Inject constructor(
                         _cartoons.value = response.data
                     }
                     is DataState.Error -> {
+                        Log.e("Request", "error ${response.message}")
 
                     }
                     else ->{}
