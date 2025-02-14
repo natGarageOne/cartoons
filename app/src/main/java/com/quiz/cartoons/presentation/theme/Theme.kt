@@ -1,4 +1,4 @@
-package com.quiz.cartoons.ui.theme
+package com.quiz.cartoons.presentation.theme
 
 import android.app.Activity
 import android.os.Build

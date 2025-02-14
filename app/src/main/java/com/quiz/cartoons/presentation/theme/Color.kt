@@ -1,4 +1,4 @@
-package com.quiz.cartoons.ui.theme
+package com.quiz.cartoons.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -55,6 +55,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.material)
+    implementation(libs.androidx.storage)
+    implementation(libs.androidx.junit.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -65,10 +68,12 @@ dependencies {
 
     //hilt
     implementation(libs.hilt.android)
+    implementation(libs.hilt.navigate)
     ksp(libs.hilt.compiler)
 
     //extras
     implementation(libs.coil)
     implementation(libs.retrofit)
+    implementation(libs.lottie)
 
 }
